@@ -9,11 +9,19 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
+		"bin-debug/game/SceneManager.js",
 		"bin-debug/AssetAdapter.js",
-		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
-		"bin-debug/common/GameUtil.js"
+		"bin-debug/common/GameUtil.js",
+		"bin-debug/game/GameData.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/game/components/MyImage.js",
+		"bin-debug/game/components/MyReward.js",
+		"bin-debug/game/components/Prize.js",
+		"bin-debug/game/components/Rule.js",
+		"bin-debug/game/scene/MainScene.js",
+		"bin-debug/game/scene/StartScene.js"
 	]
 }

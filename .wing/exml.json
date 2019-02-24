@@ -1,0 +1,18 @@
+{
+    "1691e6914a8": {
+        "path": "1221.ts",
+        "class": "1221",
+        "parentPath": ""
+    },
+    "global": {
+        "globalBindingDataTestObj": []
+    },
+    "1691e6a4074": {
+        "bindingDataTestObj": []
+    },
+    "1691f4395b3": {
+        "path": "Rule.ts",
+        "class": "Rule",
+        "parentPath": ""
+    }
+}
