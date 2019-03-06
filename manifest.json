@@ -13,6 +13,8 @@
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
-		"bin-debug/ThemeAdapter.js"
+		"bin-debug/ThemeAdapter.js",
+		"bin-debug/game/SceneManager.js",
+		"bin-debug/game/StartScene.js"
 	]
 }
