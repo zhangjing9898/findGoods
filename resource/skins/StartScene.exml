@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="StartSceneSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="169513b6083" ></w:Config>
-	<e:Rect width="720" height="1280" left="0" top="0" fillColor="0x4c947a"/>
-	<e:Image source="p1_bg_png" width="720" height="1280" left="0" top="0"/>
-	<e:Image source="logo1_png" x="190" y="70"/>
-	<e:Image id="musicImg" source="p1_json.music_png" x="592" y="70"/>
-	<e:Image id="pjImg" source="p1_json.pj_png" y="264" rotation="10.8" x="170.49"/>
-	<e:Image source="p1_json.topline_png" x="0" y="10" fillMode="repeat" width="720"/>
-	<e:Image id="sbImg" source="p1_json.sb_png" x="539" y="200" scaleY="1.98" height="88" rotation="2"/>
-	<e:Image source="logo2_png" x="148" top="405"/>
-	<e:Image source="tips_png" x="205" y="538"/>
-	<e:Group width="340" height="400" x="190" y="812">
+	<e:Rect width="720" height="1280" left="0" top="0" fillColor="0x4c947a" locked="true"/>
+	<e:Image source="p1_bg_png" width="720" height="1280" left="0" top="0" locked="true"/>
+	<e:Image source="logo1_png" x="190" y="70" locked="true"/>
+	<e:Image id="musicImg" source="p1_json.music_png" x="592" y="70" locked="true"/>
+	<e:Image id="pjImg" source="p1_json.pj_png" y="264" rotation="10.8" x="170.49" locked="true"/>
+	<e:Image source="p1_json.topline_png" x="0" y="10" fillMode="repeat" width="720" locked="true"/>
+	<e:Image id="sbImg" source="p1_json.sb_png" x="539" y="200" scaleY="1.98" height="88" rotation="2" locked="true"/>
+	<e:Image source="logo2_png" x="148" top="405" locked="true"/>
+	<e:Image source="tips_png" x="205" y="538" locked="true"/>
+	<e:Group width="340" height="400" x="190" y="812" locked="true">
 		<e:Button id="rewardMyBtn" label="" x="46" y="32" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -39,7 +39,7 @@
 			<e:VerticalLayout horizontalAlign="center" verticalAlign="middle"/>
 		</e:layout>
 	</e:Group>
-	<e:Button id="rewardBtn" label="" x="270" y="656" enabled="true">
+	<e:Button id="rewardBtn" label="" x="270" y="656" enabled="true" locked="true">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="fd_png"/>
@@ -47,4 +47,12 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
+	<e:Group width="720" height="1280" x="0" y="0" locked="true" visible="false">
+		<e:Rect width="720" height="1280" x="0" y="0" alpha="0.7"/>
+		<e:Component width="640" height="660" x="42.42" verticalCenter="0" skinName="RewardMy"/>
+	</e:Group>
+	<e:Group width="720" height="1280" x="0" y="0">
+		<e:Rect width="720" height="1280" x="0" y="0" alpha="0.7" locked="true"/>
+		<e:Component width="640" height="880" left="39" verticalCenter="0" skinName="Rule" locked="true"/>
+	</e:Group>
 </e:Skin>
