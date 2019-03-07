@@ -51,7 +51,7 @@
 		<e:Rect width="720" height="1280" x="0" y="0" alpha="0.7"/>
 		<e:Component width="640" height="660" x="42.42" verticalCenter="0" skinName="RewardMy"/>
 	</e:Group>
-	<e:Group width="720" height="1280" x="0" y="0">
+	<e:Group width="720" height="1280" x="0" y="0" visible="false">
 		<e:Rect width="720" height="1280" x="0" y="0" alpha="0.7" locked="true"/>
 		<e:Component width="640" height="880" left="39" verticalCenter="0" skinName="Rule" locked="true"/>
 	</e:Group>

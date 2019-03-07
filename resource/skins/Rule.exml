@@ -2,8 +2,8 @@
 <e:Skin class="Rule" width="640" height="880" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Rect width="577" height="600" x="32" verticalCenter="128" strokeColor="0x1f4159" strokeWeight="5" fillColor="0x4c947a" locked="true"/>
 	<e:Image source="t_png" x="32" y="12" width="577" height="261" locked="true"/>
-	<e:Scroller width="520" height="560" x="60" y="288">
-		<e:Label text="Label"/>
+	<e:Scroller id="ruleScroller" width="520" height="560" x="60" y="288">
+		<e:List id="ruleList" itemRendererSkinName="RuleItem"/>
 	</e:Scroller>
 	<e:Button id="closeBtn" label="" x="556" y="0" locked="true">
 		<e:skinName>
