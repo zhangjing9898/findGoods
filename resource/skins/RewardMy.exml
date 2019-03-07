@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RewardMy" width="640" height="660" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="577" height="350" x="30" y="268" anchorOffsetX="0" anchorOffsetY="0" fillColor="0x4c947a" strokeColor="0x1f4159" strokeWeight="5" locked="true"/>
+	<e:Image source="t_png" x="28.96" y="26" width="577" height="262" locked="true"/>
+	<e:Button id="closeBtn" label="" x="556" y="0" locked="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Group width="520" height="280" x="60" y="288">
+		<e:Rect width="520" height="280" x="0" y="0" fillColor="0x0d4c3f"/>
+		<e:Image source="h_png" anchorOffsetX="0" left="18" top="0" width="484.91" anchorOffsetY="0" height="188.27"/>
+		<e:Label text="快动动手指参加活动有劳才有有所得呦~" x="115.43" y="207.3" textColor="0xf4ba50" textAlign="center" verticalAlign="middle" anchorOffsetX="0" width="284.06" anchorOffsetY="0" height="49.7"/>
+	</e:Group>
+</e:Skin>
