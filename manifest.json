@@ -15,6 +15,7 @@
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/common/GameUtil.js",
+		"bin-debug/game/GameData.js",
 		"bin-debug/game/SceneManager.js",
 		"bin-debug/game/StartScene.js"
 	]

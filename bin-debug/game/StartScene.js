@@ -18,6 +18,26 @@ var StartScene = (function (_super) {
     };
     StartScene.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        // play music
+        this.sound = RES.getRes('music_m4a');
+        this.soundChannel = this.sound.play(0, -1);
+        this.musicImg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.musicController, this);
+    };
+    // control music
+    StartScene.prototype.musicController = function () {
+        if (this.soundChannel) {
+            this.soundChannel.stop();
+            this.soundChannel = null;
+            this.musicRotation(false);
+            return;
+        }
+        this.soundChannel = this.sound.play(0, -1);
+        this.musicRotation(true);
+    };
+    // control musicImg rotation
+    StartScene.prototype.musicRotation = function (isPlay) {
+        var tw = egret.Tween;
+        isPlay === true ? tw.resumeTweens(this.musicImg) : tw.pauseTweens(this.musicImg);
     };
     return StartScene;
 }(eui.Component));
