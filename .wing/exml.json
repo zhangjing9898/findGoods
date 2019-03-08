@@ -3,5 +3,20 @@
         "path": "game\\StartScene.ts",
         "class": "StartScene",
         "parentPath": ""
+    },
+    "1695b3317f7": {
+        "path": "..\\resource\\skins\\mainScene.ts",
+        "class": "mainScene",
+        "parentPath": ""
+    },
+    "1695b33e986": {
+        "path": "game\\MainScene.ts",
+        "class": "MainScene",
+        "parentPath": ""
+    },
+    "1695b3a1b0c": {
+        "path": "game\\MyImage.ts",
+        "class": "MyImage",
+        "parentPath": ""
     }
 }

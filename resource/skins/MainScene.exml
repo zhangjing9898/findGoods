@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainSceneSkin" width="2200" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<w:Config id="1695b33e986" ></w:Config>
+	<e:Rect width="2200" height="700" x="0" y="0" fillColor="0xfff0c7" locked="true"/>
+	<e:Rect width="2200" height="580" y="700" left="0" fillColor="0xd1776c" locked="true"/>
+	<e:Scroller width="2200" height="1280" x="0" y="0">
+		<e:Group id="viewportGroup" width="2200">
+			<ns1:MyImage id="rugImg" width="840.35" height="508.93" x="171.91" y="718.25" source="d7_png"/>
+			<ns1:MyImage id="cabinetImg" width="444" height="790" x="0" y="0" source="d1_png"/>
+			<ns1:MyImage id="windowImg" width="878" height="605" x="444" y="0" source="d3_png"/>
+			<ns1:MyImage id="tableImg" width="436" height="343" x="339.18" y="692" source="d5_png"/>
+			<ns1:MyImage id="sofaImg" width="571" height="685" x="653" y="603" source="sofa_png"/>
+			<ns1:MyImage id="cupboardImg" width="480" height="689" x="1027.41" y="1.98" source="d2_png"/>
+			<ns1:MyImage id="curtainImg" width="795.45" height="241.4" x="473.98" y="0" source="d8_png"/>
+			<ns1:MyImage id="pizzaImg" width="228.77" height="268" x="1572" y="768" source="d12_png"/>
+			<ns1:MyImage id="scrawlImg" width="39" height="268" x="1488" y="434" source="d9_png"/>
+			<ns1:MyImage id="picImg" width="157" height="157" x="1879" y="127" source="d10_png"/>
+			<ns1:MyImage id="arrowImg" width="25" height="54" x="1932.21" y="152" source="d11_png"/>
+			<ns1:MyImage id="bedImg" width="567.98" height="597" x="1632" y="432" source="d4_png"/>
+			<e:Group id="man" width="322" height="246" x="616" y="470" anchorOffsetY="0" scaleX="1.73" anchorOffsetX="0" scaleY="2.44">
+				<ns1:MyImage width="258" height="188" y="0" source="head_png" scaleX="0.74" fillMode="scale" x="148.15"/>
+				<ns1:MyImage width="233.31" height="88.64" y="173.33" scaleX="1" fillMode="scale" x="-49.13" source="nleg_png"/>
+				<ns1:MyImage id="mCalf" width="104.86" height="60.79" y="179.16" scaleX="1" fillMode="scale" x="60.31" source="xleg_png" anchorOffsetX="107" anchorOffsetY="0.52"/>
+				<ns1:MyImage id="mThigh" width="143.7" height="39.64" y="187.13" scaleX="1.21" fillMode="scale" x="207.55" source="bleg_png" anchorOffsetY="20.39" anchorOffsetX="144.63"/>
+				<ns1:MyImage id="mHand" width="134" height="134" y="135" scaleX="1" fillMode="scale" x="268" anchorOffsetY="0" anchorOffsetX="134.1" source="man_json.hand_png"/>
+				<e:Group id="smokeGroup" width="70.52" height="82.78" x="64.33" y="8.98" anchorOffsetY="0" scaleX="1" anchorOffsetX="0" scaleY="1">
+					<ns1:MyImage width="25.63" height="25.63" y="56.59" scaleX="1.15" fillMode="scale" x="44.18" source="q1_png"/>
+					<ns1:MyImage width="20.57" height="20.57" y="37.14" scaleX="1" fillMode="scale" x="30.69" source="q2_png"/>
+					<ns1:MyImage width="104.86" height="60.79" y="179.16" source="xleg_png" scaleX="1" fillMode="scale" x="60.31" anchorOffsetX="107" anchorOffsetY="0.52" id="mCalf0"/>
+				</e:Group>
+			</e:Group>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>
