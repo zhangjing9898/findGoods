@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="StartSceneSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+<e:Skin class="StartSceneSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
 	<w:Config id="169513b6083" ></w:Config>
 	<e:Rect width="720" height="1280" left="0" top="0" fillColor="0x4c947a"/>
 	<e:Image source="p1_bg_png" width="720" height="1280" left="0" top="0"/>
@@ -10,7 +10,7 @@
 	<e:Image id="sbImg" source="p1_json.sb_png" x="539" y="200" scaleY="1.98" height="88" rotation="2"/>
 	<e:Image source="logo2_png" x="148" top="405"/>
 	<e:Image source="tips_png" x="205" y="538"/>
-	<e:Group width="340" height="400" x="190" y="812">
+	<e:Group id="btnGroup" width="340" height="400" x="190" y="812">
 		<e:Button id="rewardMyBtn" label="" x="46" y="32" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -47,12 +47,12 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Group width="720" height="1280" x="0" y="0" visible="false">
+	<e:Group id="popRewardGroup" width="720" height="1280" x="0" y="0" visible="false">
 		<e:Rect width="720" height="1280" x="0" y="0" alpha="0.7"/>
-		<e:Component width="640" height="660" x="42.42" verticalCenter="0" skinName="RewardMy"/>
+		<ns1:RewardMy id="popRewardMy" width="650.3" height="653.33" skinName="RewardMySkin" anchorOffsetX="0" left="35" verticalCenter="27.5" anchorOffsetY="0"/>
 	</e:Group>
-	<e:Group width="720" height="1280" x="0" y="0" visible="false">
-		<e:Rect width="720" height="1280" x="0" y="0" alpha="0.7" locked="true"/>
-		<e:Component width="640" height="880" left="39" verticalCenter="0" skinName="Rule" locked="true"/>
+	<e:Group id="popRuleGroup" width="720" height="1280" x="-2" y="2" visible="false">
+		<e:Rect width="720" height="1280" x="0" y="0" alpha="0.7"/>
+		<ns1:Rule width="640" height="880" verticalCenter="0" left="39" skinName="RuleSkin"/>
 	</e:Group>
 </e:Skin>

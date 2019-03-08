@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="RewardMy" width="640" height="660" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="RewardMySkin" width="640" height="660" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Rect width="577" height="350" x="30" y="268" anchorOffsetX="0" anchorOffsetY="0" fillColor="0x4c947a" strokeColor="0x1f4159" strokeWeight="5" locked="true"/>
 	<e:Image source="t_png" x="28.96" y="26" width="577" height="262" locked="true"/>
 	<e:Button id="closeBtn" label="" x="556" y="0" locked="true">

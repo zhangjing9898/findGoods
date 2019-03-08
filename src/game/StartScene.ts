@@ -28,12 +28,51 @@ class StartScene extends eui.Component implements eui.UIComponent {
 	protected childrenCreated(): void {
 		super.childrenCreated();
 		// play music
-		// this.sound = RES.getRes('music_m4a');
-		// this.soundChannel = this.sound.play(0, -1);
+		this.sound = RES.getRes('music_m4a');
+		this.soundChannel = this.sound.play(0, -1);
 
-		// this.musicImg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.musicController, this);
+		this.musicImg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.musicController, this);
+		this.rewardBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, ()=>{
+			this.popRewardGroup.visible = true;
+		}, this);
+
+		this.btnGroup.touchEnabled = true;
+		this.btnGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.controllGroupBtns, this);
+		
+		// monitor pop-up closure event
+		this.addEventListener('CLOSE_POP_REWARD_MY', this.closeRewardMy, this);
+		this.addEventListener('CLOSE_POP_RULE', this.closeRule, this);
 
 		this.InitAnimation();
+	}
+
+	// express my reward pop-up
+	private showMyReward(): void {
+		this.popRewardGroup.visible = true;
+	}
+
+	// button event delegation
+	private controllGroupBtns(evt: egret.TouchEvent): void {
+		switch(evt.target) {
+			case this.rewardBtn:
+				this.showMyReward();
+				break;
+			case this.shareBtn:
+				break;
+			case this.toMainBtn:
+				break;
+		}
+	}
+
+	// close myReward pop-up
+	public closeRewardMy() {
+		debugger
+		this.popRewardGroup.visible = false;
+	}
+
+	// close rule pop-up
+	public closeRule() {
+		this.popRuleGroup.visible = false;
 	}
 
 	// control music
