@@ -42,6 +42,9 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 	{
 		super.childrenCreated();
 
+		// network image loading
+		egret.ImageLoader.crossOrigin = 'anonymous';
+
 		// setting scroller
 		this.scroller.viewport = this.viewportGroup;
 		this.scroller.bounces = false;
@@ -74,7 +77,8 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 				this.cAnimation(evt.target);
 				break;
 			case 'a':
-				this.aAnimation(evt.target)
+				this.requestApp();
+				this.aAnimation(evt.target, this.popPrize.bind(this));
 				break;
 		}
 	}
@@ -109,6 +113,7 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		request.open('https://easy-mock.com/mock/5c10be4a9b6eaa4cae0edb97/app', egret.HttpMethod.GET);
 		request.setRequestHeader('Content-Type', 'application/json');
 		request.send();
+		// console.log('request fn');
 		// listening && put data
 		request.addEventListener(egret.Event.COMPLETE, this.inputData, this);
 	}
@@ -118,7 +123,19 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		let request = <egret.HttpRequest>event.currentTarget;
 		let res = JSON.parse(request.response);
 
+		// console.log('inputData', res);
+		GameData.prizeObj = res.data;
 
+		[this.appName.text, this.msg.text, this.icon.source, this.img.source] = 
+			[
+				GameData.prizeObj.appName,
+				`恭喜${GameData.prizeObj.appName}`,
+				GameData.prizeObj.icon,
+				GameData.prizeObj.img
+			];
+		this.downloadGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, ()=>{
+			window.location.href = GameData.prizeObj.url;
+		}, this);
 	}
 
 	// first letter === a animation
@@ -135,7 +152,8 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 			.to({
 				y: target.y
 			}, 500, egret.Ease.backInOut)
-			.wait(800);
+			.wait(800)
+			.call(cb);
 	}
 
 	// arrow event
