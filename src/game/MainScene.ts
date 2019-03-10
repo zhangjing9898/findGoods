@@ -51,6 +51,27 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		this.startAnimation();
 	}
 
+	// arrow event
+	private arrowEvent(evt: egret.TouchEvent) {
+		let distance: number = 100;
+		let name = evt.target.source;
+		let currDistance = this.scroller.viewport.scrollH;
+
+		if (name === 'rr') {
+			if (currDistance + distance >= 1460) {
+				this.scroller.viewport.scrollH = 1460;
+				return;
+			}
+			this.scroller.viewport.scrollH +=distance;
+		} else if (name === 'lr') {
+			if (currDistance - distance <= 0) {
+				this.scroller.viewport.scrollH = 0;
+				return;
+			}
+			this.scroller.viewport.scrollH -= distance;
+		} 
+	}
+
 	// initialize animation
 	private startAnimation() {
 		let tw = egret.Tween;
@@ -124,6 +145,25 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		}, 800)
 			.to({
 				rotation: 0
+			}, 800)
+
+		// arrow animation
+		tw.get(this.lr, {
+			loop: true
+		}).to({
+			x: 10
+		}, 800)
+			.to({
+				x: 0
+			}, 800);
+
+		tw.get(this.rr, {
+			loop: true
+		}).to({
+			x: 586
+		}, 800)
+			.to({
+				x: 596
 			}, 800)
 	}
 	
