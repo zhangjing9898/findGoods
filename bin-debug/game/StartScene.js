@@ -46,6 +46,7 @@ var StartScene = (function (_super) {
             case this.shareBtn:
                 break;
             case this.toMainBtn:
+                SceneManager.toMainScene();
                 break;
         }
     };

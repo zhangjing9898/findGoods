@@ -1,9 +1,11 @@
 class SceneManager {
     public _stage: egret.DisplayObjectContainer;
     public startScene: StartScene;
+    public mainScene: MainScene;
 
     constructor() {
         this.startScene = new StartScene();
+        this.mainScene = new MainScene();
     }
 
     // 获取单例
@@ -37,5 +39,11 @@ class SceneManager {
     static toStartScene() {
         this.instance.removeOtherScene(this.instance.startScene);
         this.instance._stage.addChild(this.instance.startScene);
+    }
+
+    // 游戏场景
+    static toMainScene() {
+        this.instance.removeOtherScene(this.instance.mainScene);
+        this.instance._stage.addChild(this.instance.mainScene);
     }
 }

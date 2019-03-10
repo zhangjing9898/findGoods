@@ -60,6 +60,7 @@ class StartScene extends eui.Component implements eui.UIComponent {
 			case this.shareBtn:
 				break;
 			case this.toMainBtn:
+				SceneManager.toMainScene();
 				break;
 		}
 	}

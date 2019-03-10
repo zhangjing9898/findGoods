@@ -18,5 +18,10 @@
         "path": "game\\MyImage.ts",
         "class": "MyImage",
         "parentPath": ""
+    },
+    "1695cd76e2a": {
+        "path": "game\\prize.ts",
+        "class": "prize",
+        "parentPath": ""
     }
 }

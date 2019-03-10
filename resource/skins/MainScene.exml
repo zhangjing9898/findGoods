@@ -101,4 +101,40 @@
 		<e:Label id="total" text="14" x="250" size="32" verticalCenter="0"/>
 		</e:Group>
 	</e:Group>
+	<e:Group id="popPrizeGroup" width="720" height="1280" left="0" top="0" visible="false">
+		<e:Rect width="720" height="1280" fillAlpha="1" alpha=".6" x="0" y="0"/>
+		<e:Group width="640" height="800" x="40" y="222">
+			<e:Rect width="577" height="600" x="32" y="271.03" fillColor="0x4c947a" strokeColor="0x1f4159" strokeAlpha="1" strokeWeight="5" ellipseWidth="50"/>
+			<ns1:MyImage width="577" height="261.57" x="32" y="26" source="pop-title_png"/>
+			<e:Button id="closeBtn" label="" right="0" top="0">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<ns1:MyImage width="100%" height="100%" source="close_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label id="msg" text="" x="65" y="335.37" size="34" width="510" height="166" textColor="0xf2b124"/>
+			<e:Group width="420" height="200" y="503" horizontalCenter="0">
+				<ns1:MyImage id="icon" width="124.94" height="118" x="26" y="8"/>
+				<ns1:MyImage id="img" width="146" height="146" x="226" y="12"/>
+				<e:Label id="appName" text="" x="10" y="140" width="200" size="30" height="40" verticalAlign="middle"/>
+			</e:Group>
+			<e:Group id="downloadGroup" width="200" height="80" y="739.24" x="220">
+				<e:Button id="urlBtn" label="" y="0" width="200" height="80" x="0" scaleX="1" scaleY="1">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<ns1:MyImage width="100%" height="100%" source="btn_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Label text="下载抽奖" x="0" y="0" width="200" height="80" size="28" touchEnabled="true" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle"/>
+				<e:layout>
+					<e:BasicLayout/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+	<ns1:prize id="prizeComponent" width="720" height="1280" top="0" left="0" visible="false"/>
 </e:Skin>

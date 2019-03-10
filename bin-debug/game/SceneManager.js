@@ -4,6 +4,7 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var SceneManager = (function () {
     function SceneManager() {
         this.startScene = new StartScene();
+        this.mainScene = new MainScene();
     }
     Object.defineProperty(SceneManager, "instance", {
         get: function () {
@@ -36,6 +37,11 @@ var SceneManager = (function () {
     SceneManager.toStartScene = function () {
         this.instance.removeOtherScene(this.instance.startScene);
         this.instance._stage.addChild(this.instance.startScene);
+    };
+    // 游戏场景
+    SceneManager.toMainScene = function () {
+        this.instance.removeOtherScene(this.instance.mainScene);
+        this.instance._stage.addChild(this.instance.mainScene);
     };
     return SceneManager;
 }());

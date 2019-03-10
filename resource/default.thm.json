@@ -15,7 +15,8 @@
         "eui.ItemRenderer": "resource/eui_skins/ItemRendererSkin.exml",
         "StartScene": "resource/skins/StartScene.exml",
         "mainScene": "resource/skins/mainScene.exml",
-        "MainScene": "resource/skins/MainScene.exml"
+        "MainScene": "resource/skins/MainScene.exml",
+        "prize": "resource/skins/prize.exml"
     },
     "autoGenerateExmlsList": true,
     "exmls": [
