@@ -44,13 +44,13 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 
 		// setting scroller
 		this.scroller.viewport = this.viewportGroup;
-		this.scroller.bounces = true;
+		this.scroller.bounces = false;
 		this.scroller.horizontalScrollBar.autoVisibility = false;
 		this.scroller.viewport.scrollH = 720;
 
 		// control arrow
 		this.directionGroup.touchEnabled = true;
-		this.directionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.arrowEvent,this);
+		this.directionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.arrowEvent, this);
 
 		// remove tips
 		setTimeout(() => {
@@ -58,10 +58,62 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		}, 3000);
 
 		this.startAnimation();
+		this.viewportGroup.touchThrough = true;
+		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.controlSceneEvent, this);
+	}
+
+	// all page in event delegation
+	private controlSceneEvent(evt: egret.Event) {
+		console.log('control', evt.target);
+		console.log('target', evt.target.source, evt.target);
+		if (!evt.target.source) {
+			return;
+		}
+		let firstLetter: string = evt.target.source[0];
+		switch (firstLetter) {
+			case 'c':
+				this.cAnimation(evt.target);
+				break;
+			case 'a':
+				this.aAnimation(evt.target)
+				break;
+		}
+	}
+
+	// first letter === c animation
+	private cAnimation(target) {
+		let tw = egret.Tween;
+		tw.get(target, {
+			loop: false
+		}).to({
+			y: target.y - 50
+		}, 500, egret.Ease.backInOut)
+			.to({
+				y: target.y
+			}, 250, egret.Ease.backInOut);
+	}
+
+	// first letter === a animation
+	private aAnimation(target, cb: Function =()=>{}) {
+		if (!target.isClick) {
+
+		}
+		let tw = egret.Tween;
+		tw.get(target, {
+			loop: false
+		}).to({
+			y: target.y - 50
+		}, 1000, egret.Ease.backInOut)
+			.to({
+				y: target.y
+			}, 500, egret.Ease.backInOut)
+			.wait(800);
 	}
 
 	// arrow event
 	private arrowEvent(evt: egret.TouchEvent) {
+
+		console.log('arrowEvent', evt);
 		let distance: number = 100;
 		let name = evt.target.source;
 		let currDistance = this.scroller.viewport.scrollH;

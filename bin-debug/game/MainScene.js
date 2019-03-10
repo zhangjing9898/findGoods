@@ -21,7 +21,7 @@ var MainScene = (function (_super) {
         _super.prototype.childrenCreated.call(this);
         // setting scroller
         this.scroller.viewport = this.viewportGroup;
-        this.scroller.bounces = true;
+        this.scroller.bounces = false;
         this.scroller.horizontalScrollBar.autoVisibility = false;
         this.scroller.viewport.scrollH = 720;
         // control arrow
@@ -32,9 +32,57 @@ var MainScene = (function (_super) {
             _this.viewportGroup.removeChild(_this.tip);
         }, 3000);
         this.startAnimation();
+        this.viewportGroup.touchThrough = true;
+        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.controlSceneEvent, this);
+    };
+    // all page in event delegation
+    MainScene.prototype.controlSceneEvent = function (evt) {
+        console.log('control', evt.target);
+        console.log('target', evt.target.source, evt.target);
+        if (!evt.target.source) {
+            return;
+        }
+        var firstLetter = evt.target.source[0];
+        switch (firstLetter) {
+            case 'c':
+                this.cAnimation(evt.target);
+                break;
+            case 'a':
+                this.aAnimation(evt.target);
+                break;
+        }
+    };
+    // first letter === c animation
+    MainScene.prototype.cAnimation = function (target) {
+        var tw = egret.Tween;
+        tw.get(target, {
+            loop: false
+        }).to({
+            y: target.y - 50
+        }, 500, egret.Ease.backInOut)
+            .to({
+            y: target.y
+        }, 250, egret.Ease.backInOut);
+    };
+    // first letter === a animation
+    MainScene.prototype.aAnimation = function (target, cb) {
+        if (cb === void 0) { cb = function () { }; }
+        if (!target.isClick) {
+        }
+        var tw = egret.Tween;
+        tw.get(target, {
+            loop: false
+        }).to({
+            y: target.y - 50
+        }, 1000, egret.Ease.backInOut)
+            .to({
+            y: target.y
+        }, 500, egret.Ease.backInOut)
+            .wait(800);
     };
     // arrow event
     MainScene.prototype.arrowEvent = function (evt) {
+        console.log('arrowEvent', evt);
         var distance = 100;
         var name = evt.target.source;
         var currDistance = this.scroller.viewport.scrollH;
