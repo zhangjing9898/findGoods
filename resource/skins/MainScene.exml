@@ -3,7 +3,7 @@
 	<w:Config id="1695b33e986" ></w:Config>
 	<e:Rect width="2200" height="700" x="0" y="0" fillColor="0xfff0c7" locked="true"/>
 	<e:Rect width="2200" height="580" y="700" left="0" fillColor="0xd1776c"/>
-	<e:Scroller width="720" height="1280" x="0" y="0">
+	<e:Scroller id="scroller" width="720" height="1280" x="0" y="0">
 		<e:Group id="viewportGroup" width="2200">
 			<ns1:MyImage id="rugImg" width="840.35" height="508.93" x="171.91" y="718.25" source="d7_png"/>
 			<ns1:MyImage id="cabinetImg" width="444" height="790" x="0" y="0" source="d1_png"/>
@@ -34,7 +34,7 @@
 				<ns1:MyImage id="gLeg" width="138" height="138" y="330" scaleX="1" fillMode="scale" x="141.56" source="g_leg" anchorOffsetY="4" anchorOffsetX="68"/>
 				<ns1:MyImage width="154" height="126" y="349.32" scaleX="1.12" fillMode="scale" x="258.82" source="box"/>
 				<ns1:MyImage width="250.79" height="180" y="198.17" scaleX="1.11" fillMode="scale" x="79.41" anchorOffsetX="0" anchorOffsetY="0" source="g_body"/>
-				<ns1:MyImage id="GHand" width="180" height="180" y="197.56" scaleX="1" fillMode="scale" x="346.4" anchorOffsetY="0" anchorOffsetX="94" source="g_hand"/>
+				<ns1:MyImage id="gHand" width="180" height="180" y="197.56" scaleX="1" fillMode="scale" x="346.4" anchorOffsetY="0" anchorOffsetX="94" source="g_hand"/>
 				<ns1:MyImage width="314" height="266.68" y="-21" scaleX="1" fillMode="scale" x="75.41" anchorOffsetY="0" anchorOffsetX="0" id="mHand0" source="g_head"/>
 			</e:Group>
 			<ns1:MyImage id="app1" width="216" height="598.55" x="0" y="562" source="app1" scaleY="1.1"/>

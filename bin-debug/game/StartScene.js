@@ -17,21 +17,21 @@ var StartScene = (function (_super) {
         _super.prototype.partAdded.call(this, partName, instance);
     };
     StartScene.prototype.childrenCreated = function () {
-        var _this = this;
         _super.prototype.childrenCreated.call(this);
+        SceneManager.toMainScene();
         // play music
-        this.sound = RES.getRes('music_m4a');
-        this.soundChannel = this.sound.play(0, -1);
-        this.musicImg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.musicController, this);
-        this.rewardBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
-            _this.popRewardGroup.visible = true;
-        }, this);
-        this.btnGroup.touchEnabled = true;
-        this.btnGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.controllGroupBtns, this);
-        // monitor pop-up closure event
-        this.addEventListener('CLOSE_POP_REWARD_MY', this.closeRewardMy, this);
-        this.addEventListener('CLOSE_POP_RULE', this.closeRule, this);
-        this.InitAnimation();
+        // this.sound = RES.getRes('music_m4a');
+        // this.soundChannel = this.sound.play(0, -1);
+        // this.musicImg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.musicController, this);
+        // this.rewardBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, ()=>{
+        // 	this.popRewardGroup.visible = true;
+        // }, this);
+        // this.btnGroup.touchEnabled = true;
+        // this.btnGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.controllGroupBtns, this);
+        // // monitor pop-up closure event
+        // this.addEventListener('CLOSE_POP_REWARD_MY', this.closeRewardMy, this);
+        // this.addEventListener('CLOSE_POP_RULE', this.closeRule, this);
+        // this.InitAnimation();
     };
     // express my reward pop-up
     StartScene.prototype.showMyReward = function () {
@@ -52,7 +52,6 @@ var StartScene = (function (_super) {
     };
     // close myReward pop-up
     StartScene.prototype.closeRewardMy = function () {
-        debugger;
         this.popRewardGroup.visible = false;
     };
     // close rule pop-up
