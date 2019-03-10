@@ -34,11 +34,10 @@ var MainScene = (function (_super) {
         this.startAnimation();
         this.viewportGroup.touchThrough = true;
         this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.controlSceneEvent, this);
+        this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.closePrize, this);
     };
     // all page in event delegation
     MainScene.prototype.controlSceneEvent = function (evt) {
-        console.log('control', evt.target);
-        console.log('target', evt.target.source, evt.target);
         if (!evt.target.source) {
             return;
         }
@@ -52,6 +51,14 @@ var MainScene = (function (_super) {
                 break;
         }
     };
+    // open popPrize
+    MainScene.prototype.popPrize = function () {
+        this.popPrizeGroup.visible = true;
+    };
+    // close popPrize
+    MainScene.prototype.closePrize = function () {
+        this.popPrizeGroup.visible = false;
+    };
     // first letter === c animation
     MainScene.prototype.cAnimation = function (target) {
         var tw = egret.Tween;
@@ -63,6 +70,21 @@ var MainScene = (function (_super) {
             .to({
             y: target.y
         }, 250, egret.Ease.backInOut);
+    };
+    // app data request
+    MainScene.prototype.requestApp = function () {
+        var request = new egret.HttpRequest();
+        request.responseType = egret.HttpResponseType.TEXT;
+        request.open('https://easy-mock.com/mock/5c10be4a9b6eaa4cae0edb97/app', egret.HttpMethod.GET);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send();
+        // listening && put data
+        request.addEventListener(egret.Event.COMPLETE, this.inputData, this);
+    };
+    // put data
+    MainScene.prototype.inputData = function (event) {
+        var request = event.currentTarget;
+        var res = JSON.parse(request.response);
     };
     // first letter === a animation
     MainScene.prototype.aAnimation = function (target, cb) {
@@ -82,7 +104,6 @@ var MainScene = (function (_super) {
     };
     // arrow event
     MainScene.prototype.arrowEvent = function (evt) {
-        console.log('arrowEvent', evt);
         var distance = 100;
         var name = evt.target.source;
         var currDistance = this.scroller.viewport.scrollH;

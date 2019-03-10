@@ -60,12 +60,11 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		this.startAnimation();
 		this.viewportGroup.touchThrough = true;
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.controlSceneEvent, this);
+		this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.closePrize, this);
 	}
 
 	// all page in event delegation
 	private controlSceneEvent(evt: egret.Event) {
-		console.log('control', evt.target);
-		console.log('target', evt.target.source, evt.target);
 		if (!evt.target.source) {
 			return;
 		}
@@ -80,6 +79,16 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		}
 	}
 
+	// open popPrize
+	private popPrize() {
+		this.popPrizeGroup.visible = true;
+	}
+
+	// close popPrize
+	private closePrize() {
+		this.popPrizeGroup.visible = false;
+	}
+
 	// first letter === c animation
 	private cAnimation(target) {
 		let tw = egret.Tween;
@@ -91,6 +100,25 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 			.to({
 				y: target.y
 			}, 250, egret.Ease.backInOut);
+	}
+
+	// app data request
+	private requestApp() {
+		let request = new egret.HttpRequest();
+		request.responseType = egret.HttpResponseType.TEXT;
+		request.open('https://easy-mock.com/mock/5c10be4a9b6eaa4cae0edb97/app', egret.HttpMethod.GET);
+		request.setRequestHeader('Content-Type', 'application/json');
+		request.send();
+		// listening && put data
+		request.addEventListener(egret.Event.COMPLETE, this.inputData, this);
+	}
+
+	// put data
+	private inputData(event: egret.Event) {
+		let request = <egret.HttpRequest>event.currentTarget;
+		let res = JSON.parse(request.response);
+
+
 	}
 
 	// first letter === a animation
@@ -112,8 +140,6 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 
 	// arrow event
 	private arrowEvent(evt: egret.TouchEvent) {
-
-		console.log('arrowEvent', evt);
 		let distance: number = 100;
 		let name = evt.target.source;
 		let currDistance = this.scroller.viewport.scrollH;
