@@ -46,7 +46,16 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		this.scroller.viewport = this.viewportGroup;
 		this.scroller.bounces = true;
 		this.scroller.horizontalScrollBar.autoVisibility = false;
-		this.scroller.viewport.scrollH = 800;
+		this.scroller.viewport.scrollH = 720;
+
+		// control arrow
+		this.directionGroup.touchEnabled = true;
+		this.directionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.arrowEvent,this);
+
+		// remove tips
+		setTimeout(() => {
+			this.viewportGroup.removeChild(this.tip);
+		}, 3000);
 
 		this.startAnimation();
 	}

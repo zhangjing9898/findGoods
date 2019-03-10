@@ -17,12 +17,20 @@ var MainScene = (function (_super) {
         _super.prototype.partAdded.call(this, partName, instance);
     };
     MainScene.prototype.childrenCreated = function () {
+        var _this = this;
         _super.prototype.childrenCreated.call(this);
         // setting scroller
         this.scroller.viewport = this.viewportGroup;
         this.scroller.bounces = true;
         this.scroller.horizontalScrollBar.autoVisibility = false;
-        this.scroller.viewport.scrollH = 800;
+        this.scroller.viewport.scrollH = 720;
+        // control arrow
+        this.directionGroup.touchEnabled = true;
+        this.directionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.arrowEvent, this);
+        // remove tips
+        setTimeout(function () {
+            _this.viewportGroup.removeChild(_this.tip);
+        }, 3000);
         this.startAnimation();
     };
     // arrow event
