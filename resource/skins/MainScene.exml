@@ -90,7 +90,7 @@
 			</e:layout>
 		</e:Group>
 	</e:Scroller>
-	<e:Group id="directionGroup" width="720" height="1280" x="0" y="0">
+	<e:Group id="directionGroup" width="720" height="1280" x="0" y="0" touchThrough="true">
 		<ns1:MyImage id="rr" width="124" height="124" source="rr" verticalCenter="0" y="578" scaleX="1" scaleY="1" x="596"/>
 		<ns1:MyImage id="lr" width="124" height="124" source="lr" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0" y="578" scaleX="1" scaleY="1" x="0"/>
 		<e:Group id="prizeShowGroup" width="300" height="50" scaleX="1" scaleY="1" right="0" top="26">
