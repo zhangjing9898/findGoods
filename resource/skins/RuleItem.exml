@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="RuleItem" width="520" height="108" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="RuleItemSkin" width="520" height="108" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Label text="{data.text}" x="15" y="12" anchorOffsetX="0" width="492" anchorOffsetY="0" height="68" verticalAlign="middle"/>
 	<e:Image source="p1_json.topline_png" x="0" y="96" fillMode="repeat" width="520"/>
 </e:Skin>

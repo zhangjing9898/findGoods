@@ -17,7 +17,6 @@ class RewardMy extends eui.Component implements eui.UIComponent {
     }
     
     private close() {
-        debugger
         let closeEvent: egret.Event = new egret.Event('CLOSE_POP_REWARD_MY');
         this.parent.parent.dispatchEvent(closeEvent);
     }

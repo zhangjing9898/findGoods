@@ -58,7 +58,7 @@ declare class RewardMySkin extends eui.Skin{
 }
 declare class RuleSkin extends eui.Skin{
 }
-declare class RuleItem extends eui.Skin{
+declare class RuleItemSkin extends eui.Skin{
 }
 declare class StartSceneSkin extends eui.Skin{
 }

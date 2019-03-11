@@ -1,6 +1,7 @@
 class Rule extends eui.Component implements eui.UIComponent {
 	public closeBtn: eui.Button;
-
+	public list_rule: eui.List;
+	
 	public constructor() {
 		super();
 	}
@@ -12,6 +13,22 @@ class Rule extends eui.Component implements eui.UIComponent {
 
 	protected childrenCreated(): void {
 		super.childrenCreated();
+		// original data
+        let dataArr: any[] = [
+            {
+                text: '规则一'
+            },
+            {
+                text: '规则一'
+            },
+            {
+                text: '规则一'
+            }
+        ]
+        // conversion
+        let euiArr: eui.ArrayCollection = new eui.ArrayCollection(dataArr);
+        this.list_rule.dataProvider = euiArr;
+
 		this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.close, this);
 	}
 
