@@ -9,7 +9,7 @@ FindGoods：找礼物的一个小营销游戏(仿360)，基于egret白鹭游戏�
 
 ## 项目演示
 
-[演示视频地址](http://m.iqiyi.com/s/19s6y9vzqh.html?p1=2_22_222&social_platform=link)
+[演示视频地址](https://www.iqiyi.com/v_19s6y9vzqh.html?p1=2_22_222)
 
 #### 部分截图
 
