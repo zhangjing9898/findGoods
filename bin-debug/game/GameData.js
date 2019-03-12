@@ -4,7 +4,7 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var GameData = (function () {
     function GameData() {
     }
-    GameData.prizeTotal = 14;
+    GameData.prizeTotal = 8;
     GameData.prizeObj = {
         appName: '',
         icon: '',

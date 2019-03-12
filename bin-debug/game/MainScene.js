@@ -106,6 +106,10 @@ var MainScene = (function (_super) {
     MainScene.prototype.aAnimation = function (target, cb) {
         if (cb === void 0) { cb = function () { }; }
         if (!target.isClick) {
+            GameData.prizeTotal -= 1;
+            this.total.text = String(GameData.prizeTotal);
+            this.restRect.width = GameData.prizeTotal / 14 * 120;
+            target.isClick = true;
         }
         var tw = egret.Tween;
         tw.get(target, {

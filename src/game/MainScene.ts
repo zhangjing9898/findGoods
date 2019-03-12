@@ -141,7 +141,10 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 	// first letter === a animation
 	private aAnimation(target, cb: Function =()=>{}) {
 		if (!target.isClick) {
-
+			GameData.prizeTotal -= 1;
+			this.total.text = String(GameData.prizeTotal);
+			this.restRect.width = GameData.prizeTotal / 14 * 120;
+			target.isClick = true;
 		}
 		let tw = egret.Tween;
 		tw.get(target, {
