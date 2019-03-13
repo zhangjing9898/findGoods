@@ -40,6 +40,7 @@ $ egret startserver xxx(项目名) -a
 
 ![image.png](https://upload-images.jianshu.io/upload_images/3378252-f2221ee7abedbb48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+-----
 
 ### 2.tween制作动画
 
@@ -119,6 +120,8 @@ tw.get(this.smokeGroup, {
 ```
 girl的动画同man，参考写出即可。
 
+-------
+
 ### 3.游戏逻辑
 
 这个游戏逻辑相对来说挺简单的，它是这么一个步骤流程：
@@ -133,6 +136,14 @@ girl的动画同man，参考写出即可。
 这里建立了一个全局的**gameData**来管理找到礼物的个数。
 这里提到request，如果不想用node自己搭建服务器来写api接口，可以使用`easy-mock`来进行简单的搭建，具体用法可自行google
 
+#### 补充：
+
+关于**easy-mock的使用入门***，推荐几篇blog，写的特别通俗易懂：
+
+- [EasyMock新版本用法](https://blog.csdn.net/sai739295732/article/details/78687939)
+- [浅谈easy-mock](https://blog.csdn.net/weixin_43254766/article/details/83758660)
+
+-------------
 ### 4.发布游戏
 
 当整个游戏制作完成后，我们需要将它进行发布，这里只涉及H5方面发布。
@@ -174,6 +185,25 @@ Hit CTRL-C to stop the server
 ```
 最后一级文件夹名字其实是时间戳。
 这样我们便可以在pc浏览器或者手机浏览器中查看游戏了。
+
+## 项目细究
+
+在开发中，我因为2个小错误，导致进度卡壳了一会儿，这里记录一下，以防下次重犯：
+
+- 拼写问题
+	+ 由于第一次写rotation的时候，打快了，少写了一个t，导致编辑器记住了这个关键词，然后每次要敲rotation的时候，都提示rotaion，最后在tween缓动那里，排查了一会儿问题(为啥不动呀)，最后才发现是拼写问题
+
+- group点击穿透
+	+ 主页面，点击物品：在监听touchEvent中的tap事件的时候，发现currentTarget一直是group，而不是自定义组件myImage，导致后续操作失败，最后发现是在exml中对应group中少加了一句：**touchThrough = "true"**，导致，点击无法穿透，只能触发最上一层。
+	+ 如果不在exml中加这个也行，直接在ts中写**this.group.touchThrough = true** 
+     
+这里顺便扩展一下，group中的touch相关属性：
+```js
+this.group.touchEnabled = false;        //禁用可触摸属性
+this.group.touchThrough = true;         //启用点击穿透属性
+this.group.touchChildren = false;       //禁用可触摸子类属性
+```
+`注意`：遇到设置后**依然无法点击穿透**的情况，可以检查是否有其他父组件挡住了自己所要操作的group，此时更改父group的点击穿透属性即可。
 
 ## 项目源码
 
