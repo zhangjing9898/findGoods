@@ -188,6 +188,8 @@ Hit CTRL-C to stop the server
 
 ## 项目细究
 
+### 踩过的小坑
+
 在开发中，我因为2个小错误，导致进度卡壳了一会儿，这里记录一下，以防下次重犯：
 
 - 拼写问题
@@ -204,6 +206,35 @@ this.group.touchThrough = true;         //启用点击穿透属性
 this.group.touchChildren = false;       //禁用可触摸子类属性
 ```
 `注意`：遇到设置后**依然无法点击穿透**的情况，可以检查是否有其他父组件挡住了自己所要操作的group，此时更改父group的点击穿透属性即可。
+
+### Loading拓展思考
+
+在做loading页的时候，有一个疑问loading中的promiseTaskReporter和onProcess是怎么关联起来的，查了一些资料后，发现它的流程是这样的：
+
+> 加载进度
+
+游戏资源加载过程中，通常都会存在一个loading进度条，或者能够表示加载进度的展示方法。在新的RES模块中，读取加载进度也非常的方便。在`RES`模块中，新增了一个名为`PromiseTaskReporter`的接口(该接口声明于**assetsmanager.d.ts**中)，借助这个接口，我们可以实现读取加载进度的效果。
+
+**PromiTaskReporter**接口包含2个方法(os: 自行选择实现)：
+
+- `onProgress`：该方法类似于以前的`GROUP_PROGRESS`事件，用于读取加载进度
+- `onCancel`：取消
+
+使用时，你可以创建一个对象或者一个类，来实现`PromiseTaskReporter`接口，并在`loadGroup`加载组时，将其实例化对象作为参数传递进去。项目中代码如下：
+
+```js
+class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
+    public onProgress(current: number, total: number): void 
+        let percent: number = Math.round(current / total * 100);
+        this.percent.text = `${percent}%`;
+        // 进度条
+        this.bar.graphics.beginFill(0x4C947A, 1);
+        this.bar.graphics.drawRect(50, 150, 3 * percent, 12);
+        this.bar.graphics.endFill();
+    }
+}
+```
+因为升级了RES模块，所以当时出现了这些困扰，这里记录一篇blog，详细讲解了RES全新模块—— [Egret全新RES模块详解](https://www.ashan.org/archives/945)
 
 ## 项目源码
 
